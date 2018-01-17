@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka-client01
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:~/test
+    username: sa
+    password: null
+  config:
+    location: classpath
+    name: microservice
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: Eureka Client
+    description: This is my first eureka client
+    version: 1.0.0
